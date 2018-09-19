@@ -6,11 +6,9 @@
 # Допустим пользователь ввел 2, оно подходит, возводим в степень 2, и выводим 4
 num = False
 while not num:
-    num_user = int(input('ttt'))
-    if num_user < 0:
-        print('Неверное число, допустимый диапазон от 0 до 10')
-    elif num_user > 10:
+    num_user = int(input('Введите число'))
+    if num_user > 10 or num_user < 0:
         print('Неверное число, допустимый диапазон от 0 до 10')
     else:
         num = True
-        print(num_user**2)
+        print('Ваше число в квадрате =', num_user ** 2)
