@@ -15,16 +15,16 @@
 
 # fruits = ["Яблоко", "Банан", "Киви", "Арбуз"]
 # for index, fruit in enumerate(fruits,1):
-#     print(index, fruit.rjust(30))
+#     print(str(index)+'.', fruit.rjust(6))
 
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
 
-# list_1 = [1, 2, 3, 5, 'dfdd']
-# list_2 = [1, 2, 3, 'sddf']
-# print(set(list_1) - set(list_2))
+list_1 = [1, 2, 3, 5, 'dfdd']
+list_2 = [1, 2, 3, 'sddf']
+print(list(set(list_1) - set(list_2)))
 
 
 # Задача-3:
@@ -32,13 +32,13 @@
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
 
-list = [1, 2, 3, 4, 5, 5, 5, 6]
-new_list = []
-for value in list:
-    if value % 2 == 0:
-        value = value / 4
-        new_list.append(value)
-    else:
-        value = value * 2
-        new_list.append(value)
-print(new_list)
+# list = [1, 2, 3, 4, 5, 5, 5, 6]
+# new_list = []
+# for value in list:
+#     if value % 2 == 0:
+#         value = value / 4
+#         new_list.append(value)
+#     else:
+#         value = value * 2
+#         new_list.append(value)
+# print(new_list)
