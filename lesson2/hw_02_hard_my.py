@@ -135,11 +135,36 @@
 # Вход: 11
 # Выход: 5 3
 
-ap = 12
-count=0
-while cout==ap:
+ap = 400000
+count = 0
+count2 = 0
+max_ap = 0
+i = 1
+floor = 0
+floor_max = 0
+floor_min = 0
+list_max_ap = []
+list_min_ap = [1]
+list_floor = []
+while max_ap < ap:
+    count += 1
+    floor += count
+    max_ap += i ** 2
+    i += 1
+    list_floor.append(floor)
+    list_max_ap.append(max_ap)
+    list_min_ap.append((list_max_ap[-1]) + 1)
+    min_floor = (list_floor[(count - 2)] + 1)
+    max_floor = (list_floor[count - 1])
+# print(list_max_ap, list_min_ap, list_floor, count, min_floor, max_floor)
+for app in range(list_min_ap[count - 1], list_max_ap[count - 1]):
+    count2 += 1
+    if app == ap:
+        floor_ap = min_floor
+        ap_left = count2
+        break
+    if count2 == count:
+        count2 = 0
+        min_floor += 1
 
-
-    print(sk_ap)
-
-
+print(floor_ap, ap_left)
