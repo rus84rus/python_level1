@@ -111,3 +111,19 @@
 # например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+
+
+lst = [1, 2, 4, 5, 6, 2, 5, 2]
+lst2 = set(lst)
+lst3 =[]
+# print(lst)
+print(list(lst2))
+# m=lst.count(2)
+# print(m)
+for i in lst:
+    count = lst.count(i)
+    if count == 1:
+        lst3.append(i)
+    else:
+        continue
+print(lst3)
