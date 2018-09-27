@@ -124,6 +124,6 @@ for i in lst:
     count = lst.count(i)
     if count == 1:
         lst3.append(i)
-    else:
-        continue
+    # else:
+    #     continue
 print(lst3)
