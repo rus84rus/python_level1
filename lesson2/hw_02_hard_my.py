@@ -135,36 +135,33 @@
 # Вход: 11
 # Выход: 5 3
 
-ap = 400000
-count = 0
-count2 = 0
+ap = 2000000000
+floor_count = 0
+ap_position = 0
 max_ap = 0
-i = 1
-floor = 0
-floor_max = 0
-floor_min = 0
-list_max_ap = []
-list_min_ap = [1]
-list_floor = []
-while max_ap < ap:
-    count += 1
-    floor += count
-    max_ap += i ** 2
-    i += 1
-    list_floor.append(floor)
-    list_max_ap.append(max_ap)
-    list_min_ap.append((list_max_ap[-1]) + 1)
-    min_floor = (list_floor[(count - 2)] + 1)
-    max_floor = (list_floor[count - 1])
-# print(list_max_ap, list_min_ap, list_floor, count, min_floor, max_floor)
-for app in range(list_min_ap[count - 1], list_max_ap[count - 1]):
-    count2 += 1
-    if app == ap:
-        floor_ap = min_floor
-        ap_left = count2
-        break
-    if count2 == count:
-        count2 = 0
-        min_floor += 1
+ap_count = 1
+max_floor = 0
+min_ap = 0
+if ap == 1:
+    print('floor_ap = 1, ap_left = 1')
+else:
+    while max_ap <= ap:
+        floor_count += 1
+        previus_max_floor = max_floor
+        max_floor += floor_count
+        min_ap = max_ap
+        max_ap += ap_count ** 2
+        ap_count += 1
+    min_floor = previus_max_floor + 1
 
-print(floor_ap, ap_left)
+    while True:
+        min_ap = min_ap + 1
+        ap_position += 1
+        if min_ap == ap:
+            floor_ap = min_floor
+            ap_left = ap_position
+            break
+        if ap_position == floor_count:
+            ap_position = 0
+            min_floor += 1
+    print('floor_ap =', floor_ap, 'ap_left =', ap_left)
