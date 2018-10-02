@@ -13,18 +13,18 @@
 
 # Подсказка: воспользоваться методом .format()
 
-# fruits = ["Яблоко", "Банан", "Киви", "Арбуз"]
-# for index, fruit in enumerate(fruits,1):
-#     print(str(index)+'.', fruit.rjust(6))
+fruits = ["Яблоко", "Банан", "Киви", "Арбуз"]
+for index, fruit in enumerate(fruits,1):
+    print(str(index)+'.', fruit.rjust(6))
 
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
 
-list_1 = [1, 2, 3, 5, 'dfdd']
-list_2 = [1, 2, 3, 'sddf']
-print(list(set(list_1) - set(list_2)))
+# list_1 = [1, 2, 3, 5, 'dfdd']
+# list_2 = [1, 2, 3, 'sddf']
+# print(list(set(list_1) - set(list_2)))
 
 
 # Задача-3:
