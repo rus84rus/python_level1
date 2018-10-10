@@ -14,8 +14,9 @@
 # Подсказка: воспользоваться методом .format()
 
 fruits = ["Яблоко", "Банан", "Киви", "Арбуз"]
+x=len(max(fruits,key=len))
 for index, fruit in enumerate(fruits,1):
-    print(str(index)+'.', fruit.rjust(6))
+    print(str(index)+'.'+ fruit.rjust(x))
 
 
 # Задача-2:
