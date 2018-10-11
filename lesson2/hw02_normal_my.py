@@ -54,7 +54,7 @@ month_str = ['января', 'февраля', 'марта', 'апреля', 'м
 days = {keys: value for keys, value in enumerate(day_list_do_20, 1)}
 months = {keys: value for keys, value in enumerate(month_str, 1)}
 years = [a for a in range(1, 2019)]
-#print(days)
+print(days)
 #print(months)
 
 # Вводим дату
