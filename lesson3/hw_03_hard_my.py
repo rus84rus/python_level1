@@ -41,10 +41,12 @@
 # пока у одного из них health не станет меньше или равен 0.
 # После чего на экран должно быть выведено имя победителя, и количество оставшихся единиц здоровья.
 
-# player_1=input('Введите имя игрока 1:')
-# player_2=input('Введите имя игрока 2:')
-player_stats = {'name': 'person1', 'health': '140', 'damage': '10', 'armor': '1.2'}
-enemy_stats = {'name': 'person2', 'health': '100', 'damage': '30', 'armor': '2.9'}
+
+player_1=input('Введите имя игрока 1:')
+player_2=input('Введите имя игрока 2:')
+
+player_stats = {'name': player_1, 'health': '140', 'damage': '20', 'armor': '3.2'}
+enemy_stats = {'name': player_2, 'health': '100', 'damage': '30', 'armor': '2.9'}
 players = {'player': player_stats, 'enemy': enemy_stats}
 
 # сохраним игроков в файлы (имя_игрока.тхт)
@@ -68,11 +70,11 @@ def read_file_create_dict(file_1, file_2):
     dict_tmp_2 = {}
     with open(file_1, 'r', encoding='utf-8') as file:
         for line in file.readlines():
-            key, val = line.strip().split('-')
+            key, val = line.strip().split(' - ')
             dict_tmp_1[key] = val
     with open(file_2, 'r', encoding='utf-8') as file:
         for line in file.readlines():
-            key, val = line.strip().split('-')
+            key, val = line.strip().split(' - ')
             dict_tmp_2[key] = val
     return (dict_tmp_1, dict_tmp_2)
 
@@ -80,7 +82,9 @@ def read_file_create_dict(file_1, file_2):
 # функция вычисляет урон который может нанести атакующий исходя из брони атакуемого и возвращает модифицированный урон
 
 def damage_attack(person_1, person_2):
-    damage = float(person_1.get['damage']) / float(person_2.get['armor'])
+    # print(type(person_1))
+    # print(person_1['damage'])
+    damage = float(person_1['damage']) / float(person_2['armor'])
     # print(damage)
     return damage
 
@@ -88,7 +92,7 @@ def damage_attack(person_1, person_2):
 # функция вычитает урон атакующего из здоровья атакуемого
 def attack(person_1, person_2):
     damage = damage_attack(person_1, person_2)
-    health = float(person_2.get['health']) - damage
+    health = float(person_2['health']) - damage
     # print(damage, health)
     person_2['health'] = str(health)
 
@@ -100,6 +104,7 @@ print(player, enemy)
 
 # запустим игровой процесс
 
+
 while True:
     attack(player, enemy)
     if float(enemy['health']) <= 0:
@@ -107,7 +112,7 @@ while True:
         break
     attack(enemy, player)
     if float(player['health']) <= 0:
-        print('Победил игрок: ' + player_2, 'Оставшееся здоровье: ' + player['health'])
+        print('Победил игрок: ' + player_2 +'.', 'Оставшееся здоровье: ' + enemy['health'])
         break
 
-print(players)
+
