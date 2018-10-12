@@ -1,0 +1,4 @@
+name - person1
+health - 140
+damage - 10
+armor - 1.2
