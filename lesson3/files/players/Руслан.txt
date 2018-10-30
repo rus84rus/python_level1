@@ -1,0 +1,4 @@
+name - Руслан
+health - 140
+damage - 20
+armor - 3.2

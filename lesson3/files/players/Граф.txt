@@ -1,0 +1,4 @@
+name - Граф
+health - 100
+damage - 30
+armor - 2.9
